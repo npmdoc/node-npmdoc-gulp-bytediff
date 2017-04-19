@@ -81,15 +81,6 @@
 
         </li>
 
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.gulp-bytediff.toString">
-            function <span class="apidocSignatureSpan">gulp-bytediff.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
     </ol></li>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.gulp-bytediff.start">module gulp-bytediff.start</a><ol>
@@ -108,32 +99,6 @@
             <a class="apidocElementLiA" href="#apidoc.element.gulp-bytediff.start.stop">
             function <span class="apidocSignatureSpan">gulp-bytediff.start.</span>stop
             <span class="apidocSignatureSpan">(formatFn)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-bytediff.stop">module gulp-bytediff.stop</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.gulp-bytediff.stop.stop">
-            function <span class="apidocSignatureSpan">gulp-bytediff.</span>stop
-            <span class="apidocSignatureSpan">(formatFn)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-bytediff.toString">module gulp-bytediff.toString</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.gulp-bytediff.toString.toString">
-            function <span class="apidocSignatureSpan">gulp-bytediff.</span>toString
-            <span class="apidocSignatureSpan">()</span>
             </a>
 
         </li>
@@ -260,21 +225,6 @@ gulp.task('default', function() {
     </ul>
 
 
-
-    <h2>
-        <a href="#apidoc.element.gulp-bytediff.toString" id="apidoc.element.gulp-bytediff.toString">
-        function <span class="apidocSignatureSpan">gulp-bytediff.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
 </div>
 
 <div class="apidocSectionDiv">
@@ -371,86 +321,6 @@ gulp.task('default', function() {
 
 ### bytediff.start() or bytediff()
 ...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.gulp-bytediff.stop" id="apidoc.module.gulp-bytediff.stop">module gulp-bytediff.stop</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.gulp-bytediff.stop.stop" id="apidoc.element.gulp-bytediff.stop.stop">
-        function <span class="apidocSignatureSpan">gulp-bytediff.</span>stop
-        <span class="apidocSignatureSpan">(formatFn)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">stop = function (formatFn) {
-    return map(function (file, cb) {
-        if (typeof formatFn !== 'function') {
-            formatFn = function (data) {
-                var saved = (data.savings &gt; 0) ? ' saved ' : ' gained ';
-                var color = (data.savings &gt; 0) ? 'green' : 'yellow';
-                var start = size(data.startSize);
-                var end = gutil.colors[color](size(data.endSize));
-                var report = ' (' + start + ' -&gt; ' + end + ')';
-                return data.fileName + saved +
-                  size(Math.abs(data.savings)) + report;
-            };
-        }
-
-        if (file.bytediff.startSize) {
-            var endSize = file.contents.length;
-
-            gutil.log(formatFn({
-                fileName: path.basename(file.path),
-                startSize: file.bytediff.startSize,
-                endSize: endSize,
-                savings: file.bytediff.startSize - endSize,
-                percent: (endSize / file.bytediff.startSize)
-            }));
-        }
-
-        cb(null, file);
-    });
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-var bytediff = require('gulp-bytediff');
-var csso = require('gulp-cssnano');
-
-gulp.task('default', function() {
-    gulp.src('main.css')
-        .pipe(bytediff.start())
-        .pipe(cssnano())
-        .pipe(bytediff.<span class="apidocCodeKeywordSpan">stop</span>())
-        .pipe(gulp.dest('./out'));
-});
-```
-
-## API
-
-### bytediff.start() or bytediff()
-...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.gulp-bytediff.toString" id="apidoc.module.gulp-bytediff.toString">module gulp-bytediff.toString</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.gulp-bytediff.toString.toString" id="apidoc.element.gulp-bytediff.toString.toString">
-        function <span class="apidocSignatureSpan">gulp-bytediff.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
