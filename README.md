@@ -1,6 +1,6 @@
 # npmdoc-gulp-bytediff
 
-#### api documentation for  [gulp-bytediff (v1.0.0)](https://github.com/ben-eb/gulp-bytediff)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-bytediff.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-bytediff) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-bytediff.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-bytediff)
+#### basic api documentation for  [gulp-bytediff (v1.0.0)](https://github.com/ben-eb/gulp-bytediff)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-bytediff.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-bytediff) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-bytediff.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-bytediff)
 
 #### Compare file sizes before and after your gulp build process.
 
@@ -65,7 +65,8 @@
     "scripts": {
         "test": "mocha"
     },
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "bin": {}
 }
 ```
 
